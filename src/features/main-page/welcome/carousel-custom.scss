@@ -1,0 +1,134 @@
+@import '../../../styles/variables.scss';
+
+.welcome-carousel {
+	background-color: $dark-grey;
+	padding-bottom: 5px;
+}
+
+.welcome-carousel .carousel-container .carousel .control-dots {
+	bottom: 130px;
+}
+
+
+.welcome-carousel .carousel-container .control-dots .dot {
+	background-color: #fff;
+}
+
+.control-arrow {
+	display: none;
+}
+
+@media (max-width: $tablet-width) {
+	.welcome-carousel .carousel.carousel-slider {
+		background-color: #3C3C3C;
+	}
+	.welcome-carousel .carousel.carousel-slider .control-dots {
+		bottom: -7px;
+	}
+}
+
+@media (min-width: $tablet-width) {
+	.welcome-carousel {
+	   background: none;
+    }
+	
+	.carousel .control-dots {
+		display: none;
+	}
+
+	.welcome-carousel .carousel.carousel-slider .control-arrow {
+		display: block;
+		background: none;
+		opacity: 1;
+		top: 100px;
+		z-index: 1;
+
+		&:hover,
+		&:focus {
+			background: none;
+		}
+
+		&:before {
+			display: none;
+		}
+
+		svg {
+			color: #fff;
+			height: 42px;
+			width: 42px;
+
+			path {
+				stroke: #ffffff;
+				transition: stroke 0.25s ease-in-out;
+			}
+
+			circle {
+				fill: none;
+				transition: all 0.25s ease-in-out;
+			}
+
+			&:hover {
+				circle {
+					fill: #ffffff;
+					transition: fill 0.25s ease-in-out;
+				}
+
+				path {
+					stroke: #e5e5e5;
+					transition: stroke 0.25s ease-in-out;
+				}
+			}
+
+			&:active {
+				path {
+					stroke: #ffffff;
+					transition: stroke 0.25s ease-in-out;
+				}
+
+				circle {
+					stroke: $main-orange;
+					fill: $main-orange;
+					transition: all 0.25s ease-in-out;
+				}
+			}
+		}
+	}
+
+	.slider-control__prev {
+		top: 80px;
+		left: 8px;
+	}
+
+	.slider-control__next {
+		top: 80px;
+		right: 8px;
+	}
+
+	.slider-control__bottom {
+		position: absolute;
+		z-index: 2;
+		top: 85%;
+		right: 50%;
+		height: 40px;
+		width: 40px;
+		transform: rotate(90deg);
+		display: block;
+	}
+}
+
+@media (min-width: $desktop-width) {
+	.welcome-carousel .carousel.carousel-slider .control-arrow {
+		svg {
+			height: 50px;
+			width: 50px;
+		}
+	}
+
+	.slider-control__next {
+		right: 1.5%;
+	}
+
+	.slider-control__prev {
+		left: 1.5%;
+	}
+}

@@ -1,0 +1,38 @@
+@use "@/styles/variables" as *;
+
+.text-input {
+  margin-bottom: 20px;
+}
+
+.text-input input {
+  font-family: 'Montserrat', serif;
+  padding: 20px;
+  width: 100%;
+  max-width: 328px;
+  border: 1px solid $field-grey;
+}
+
+.text-input .input__error {
+  border: 1px solid $red;
+}
+
+.text-input input::placeholder {
+  font-family: 'Montserrat', serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: $field-grey;
+}
+
+@media (min-width: $tablet-width) {
+  .text-input input {
+    max-width: 412px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .text-input input {
+    max-width: 494px;
+  }
+}
