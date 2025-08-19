@@ -1,5 +1,4 @@
-//@import "../../../styles/variables.scss";
-@use "../../../styles/variables.scss" as *;
+@use "@/styles/variables" as *;
 
 @media (min-width: $desktop-width) {
   .welcome {

@@ -1,5 +1,7 @@
+import { StaticImageData } from 'next/image'
+
 export interface PrincipleItemData {
-  backgroundUrl: string;
-  title: string;
-  description: string;
+	backgroundUrl: StaticImageData
+	title: string
+	description: string
 }

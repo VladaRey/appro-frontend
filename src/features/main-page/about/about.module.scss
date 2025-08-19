@@ -1,5 +1,5 @@
-@import "../../../styles/common.scss";
-@import "../../../styles/variables.scss";
+@use "@/styles/common" as *;
+@use "@/styles/variables" as *;
 
 .about {
   padding-bottom: 50px;
@@ -11,13 +11,17 @@
   margin-bottom: 27px;
 }
 
-.about__photo img,
-.about__certificate img {
+.about__photo-img,
+.about__certificate-img {
   @extend .responsive-image;
   max-height: 300px;
   object-fit: contain;
   object-position: left;
   box-shadow: 10px 10px $dark-orange;
+}
+
+.about__photo-img {
+  min-width: 300px;
 }
 
 .about__photo {
@@ -64,17 +68,17 @@
   .about__photo {
     max-width: 450px;
     margin-right: 20px;
-    img {
-      max-height: 500px;
-    }
+  }
+  .about__photo-img {
+    max-height: 500px;
   }
 
   .about__certificate {
     max-width: 228px;
 
-    img {
-      max-height: 500px;
-    }
+  }
+  .about__certificate-img {
+    max-height: 500px;
   }
 }
 

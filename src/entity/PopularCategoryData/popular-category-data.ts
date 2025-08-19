@@ -1,5 +1,7 @@
+import { StaticImageData } from 'next/image'
+
 export interface PopularCategoryData {
-  image: string;
-  title: string;
-  link?: string;
+	image: StaticImageData
+	title: string
+	link?: string
 }

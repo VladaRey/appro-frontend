@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import classes from "./about.module.scss";
+import Link from "next/link";
+import Image from "next/image";
 
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-
-import Link from "next/link";
+import classes from "./about.module.scss";
+import { Container } from "@/containers/hoc/container/container";
+import { Button } from "@/components/ui/button/button.component";
 
 import team_photo from "@/assets/img/about-us/about-main-1.jpg";
 import certificate from "@/assets/img/main/about-us/certificate.jpg";
-import { Container } from "@/containers/hoc/container/container";
-import { Button } from "@/components/ui/button/button.component";
-import Image from "next/image";
 
 export const About = () => {
   const [isOpen, setOpen] = useState(false);
@@ -25,7 +24,7 @@ export const About = () => {
         </div>
         <div className={classes["about__body"]}>
           <div className={classes["about__photo"]}>
-            <Image src={team_photo} alt="Team photo" />
+            <Image src={team_photo} alt="Team photo" className={classes["about__photo-img"]} width={450} height={500}/>
           </div>
           <div
             className={classes["about__certificate"]}
@@ -37,7 +36,7 @@ export const About = () => {
                 onCloseRequest={() => setOpen(false)}
               />
             )}
-            <Image src={certificate} alt="certificate" />
+            <Image src={certificate} alt="certificate" className={classes["about__certificate-img"]}/>
           </div>
           <div className={classes["about__description"]}>
             <div className={classes["about__description-text"]}>

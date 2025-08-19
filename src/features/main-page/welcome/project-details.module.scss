@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@use "@/styles/variables" as *;
 
 .project-details {
   padding: 10px 15px 30px 15px;

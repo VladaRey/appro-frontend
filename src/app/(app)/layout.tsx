@@ -6,8 +6,8 @@ import { store } from '@/redux/configure-store'
 import "@/i18n/config"
 
 import { Wrapper } from '@/containers/hoc/wrapper/wrapper'
-//import { Header } from '@/components/Header/Header'
-//import { Footer } from '@/components/Footer/Footer'
+import { Header } from '@/components/header/header.component'
+import { Footer } from '@/components/footer/footer.component'
 //import { OrderModalContainer } from '@/modal/OrderModalContainer'
 //import SuccessPopup from '@/components/SuccessPopup/SuccessPopup'
 
@@ -28,9 +28,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 		<QueryProvider>
 			<Provider store={store}>
 				<Wrapper>
-					{/*<Header />*/}
+					<Header />
 					<main className={classes.content}>{children}</main>
-					{/*<Footer />*/}
+					<Footer />
 					{/*<OrderModalContainer onFormSubmit={showSuccessMessage} />
 					{successMessageVisible && <SuccessPopup />}*/}
 				</Wrapper>

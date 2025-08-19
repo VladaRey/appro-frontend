@@ -1,9 +1,9 @@
 "use client";
 
 //import { Welcome } from "@/features/main-page/welcome/welcome-page.component";
-//import { Popular } from "./Popular/Popular";
-//import { Principles } from "./Principles/Principles";
-//import { Feedback } from "./Feedback/Feedback";
+import { Popular } from "@/features/main-page/popular/popular.component";
+import { Principles } from "@/features/main-page/principles/principles.component";
+import { Feedback } from "@/features/main-page/feedback-form/feedback-form.component";
 import { About } from "@/features/main-page/about/about.component";
 import { useSelector } from "react-redux";
 import {
@@ -12,7 +12,7 @@ import {
   getProjects,
 } from "../../redux/selectors";
 import { useGetAllProjects } from "../../api/use-get-all-projects";
-import { Project } from "@/entity/Project/project";
+import { ProjectDto } from "@/api/model";
 
 export default function Home() {
   const { data: projects } = useGetAllProjects();
@@ -22,14 +22,14 @@ export default function Home() {
 
   if (!projects) return <div>Loading...</div>;
 
-  const welcomeProjects = projects.filter((project: Project) => project.projectConfig.showOnMain);
+  const welcomeProjects = projects.filter((project: ProjectDto) => project.showOnMain);
   return (
     <>
-      {/*<Welcome mockProjects={welcomeProjects} /> */}
-      {/* <Popular popularCategories={popularCategories} /> */}
+      {/* <Welcome mockProjects={welcomeProjects} /> */}
+      <Popular popularCategories={popularCategories} />
       <About /> 
-      {/* <Principles principlesData={principlesData} /> */}
-      {/* <Feedback /> */}
+      <Principles principlesData={principlesData} />
+      <Feedback />
     </>
   );
 };

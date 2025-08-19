@@ -1,5 +1,5 @@
 import classes from './text-input.module.scss'
-import InputMask from 'react-input-mask'
+import { useMask } from '@react-input/mask'
 
 interface Props {
 	placeholder: string
@@ -22,31 +22,18 @@ export const TextInput = ({
 	placeholder,
 	mask
 }: Props) => {
+	const maskProps = mask ? useMask({ mask }) : {}
+
 	return (
 		<div className={classes['text-input']}>
-			{!mask && (
-				<input
-					className={error ? classes['input__error'] : ''}
-					value={value}
-					onChange={onChange}
-					type={type || 'text'}
-					placeholder={placeholder}
-				/>
-			)}
-			{mask && (
-				<InputMask mask={mask} onChange={onChange} value={value}>
-                    {(inputProps) => (                       
-					<input
-                        {...inputProps}
-						className={error ? classes['input__error'] : ''}
-						// value={value}
-						// onChange={onChange}
-						type={type || 'text'}
-						placeholder={placeholder}
-					/>
-                    )}
-				</InputMask>
-			)}
+			<input
+				className={error ? classes['input__error'] : ''}
+				type={type || 'text'}
+				placeholder={placeholder}
+				value={value}
+				onChange={onChange}
+				{...maskProps}
+			/>
 		</div>
 	)
 }

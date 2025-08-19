@@ -11,21 +11,20 @@ import { ProjectDto } from "../../api/model";
 import { PopularCategoryData } from "../../entity/PopularCategoryData/popular-category-data";
 import { PrincipleItemData } from "../../entity/PrincipleItemData/principle-item-data";
 
-import house_2a_1 from "@/assets/img/catalogue/house_2A-1.jpg";
-import house_plan_1_2a_1 from "@/assets/img/projects/plan/house_plan_2a_1.jpeg";
-import house_plan_2_2a_1 from "@/assets/img/projects/plan/house_plan_2_2a_1.jpeg";
-const mansardaImg = "@/assets/img/main/popular/mansarda.jpg";
-const oneFloorImg = "@/assets/img/main/popular/one_floor.jpg";
-const twoFloorImg = "@/assets/img/main/popular/two_floor.jpg";
-const modernImage = "@/assets/img/main/popular/modern.jpg";
-const classicImage = "@/assets/img/main/popular/classic.jpg";
-const smallImage = "@/assets/img/main/popular/150.jpg";
-const mediumImage = "@/assets/img/main/popular/150_250.jpg";
-const largeImage = "@/assets/img/main/popular/250.jpg";
-const benefitImage = "@/assets/img/main/principles/benefit.jpg";
-const strengthImage = "@/assets/img/main/principles/strength.jpg";
-const beautyImage = "@/assets/img/main/principles/beauty.jpg";
-
+import house_2a_1 from '@/assets/img/catalogue/house_2A-1.jpg'
+import house_plan_1_2a_1 from '@/assets/img/projects/plan/house_plan_2a_1.jpeg'
+import house_plan_2_2a_1 from '@/assets/img/projects/plan/house_plan_2_2a_1.jpeg'
+import mansardaImg from '@/assets/img/main/popular/mansarda.jpg'
+import oneFloorImg from '@/assets/img/main/popular/one_floor.jpg'
+import twoFloorImg from '@/assets/img/main/popular/two_floor.jpg'
+import modernImage from '@/assets/img/main/popular/modern.jpg'
+import classicImage from '@/assets/img/main/popular/classic.jpg'
+import smallImage from '@/assets/img/main/popular/150.jpg'
+import mediumImage from '@/assets/img/main/popular/150_250.jpg'
+import largeImage from '@/assets/img/main/popular/250.jpg'
+import benefitImage from '@/assets/img/main/principles/benefit.jpg'
+import strengthImage from '@/assets/img/main/principles/strength.jpg'
+import beautyImage from '@/assets/img/main/principles/beauty.jpg'
 
 export interface ProjectsSliceState {
   // all projects

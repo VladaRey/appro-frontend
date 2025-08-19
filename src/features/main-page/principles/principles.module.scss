@@ -1,0 +1,32 @@
+@use "@/styles/common" as *;
+@use "@/styles/variables" as *;
+
+.principles__title {
+  @extend ._main-title;
+  @extend .title-underscore;
+  margin-bottom: 24px;
+}
+
+@media (min-width: $tablet-width) {
+  .principles__title {
+    margin-bottom: 32px;
+  }
+
+  .principles__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .principles__title {
+    margin-bottom: 63px;
+  }
+
+  .principles__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+  }
+}
