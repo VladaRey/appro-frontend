@@ -4,12 +4,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./carousel-custom.scss";
 
 import { Carousel } from "react-responsive-carousel";
-import { Project } from "@/entity/Project/project";
 import { ProjectItem } from "./project-item.component";
 
 import SliderPrev from "@/assets/img/main/welcome/slider-prev.svg";
 import SliderNext from "@/assets/img/main/welcome/slider-next.svg";
 import Link from "next/link";
+import Image from "next/image";
 import { ProjectDto } from "@/api/model";
 
 interface PropsType {
@@ -27,7 +27,7 @@ export const Welcome = ({ mockProjects }: PropsType) => {
         aria-label="prev slide / item"
         className={arrowClasses.join(" ")}
       >
-        <SliderPrev />
+        <Image src={SliderPrev} alt='Previous slide' width={50} height={50}/>
       </button>
     );
   };
@@ -36,14 +36,14 @@ export const Welcome = ({ mockProjects }: PropsType) => {
     const arrowClasses = ["slider-control__next", "control-arrow"];
 
     return (
-      <button
-        onClick={clickHandler}
-        aria-label="next slide / item"
-        className={arrowClasses.join(" ")}
-      >
-        <SliderNext />
-      </button>
-    );
+			<button
+				onClick={clickHandler}
+				aria-label='next slide / item'
+				className={arrowClasses.join(' ')}
+			>
+				<Image src={SliderNext} alt='Next slide' width={50} height={50}/>
+			</button>
+		)
   };
 
   return (
@@ -63,14 +63,14 @@ export const Welcome = ({ mockProjects }: PropsType) => {
           ))}
         </Carousel>
       </div>
-      <a href="/#popular-category">
+      <Link href="/#popular-category">
         <div
           aria-label="to bottom"
           className={["slider-control__bottom", "control-arrow"].join(" ")}
         >
-          <SliderNext />
+          <Image src={SliderNext} alt='Next slide' width={50} height={50}/>
         </div>
-      </a>
+      </Link>
     </section>
   );
 };

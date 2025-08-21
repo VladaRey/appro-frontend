@@ -1,6 +1,6 @@
 "use client";
 
-//import { Welcome } from "@/features/main-page/welcome/welcome-page.component";
+import { Welcome } from "@/features/main-page/welcome/welcome-page.component";
 import { Popular } from "@/features/main-page/popular/popular.component";
 import { Principles } from "@/features/main-page/principles/principles.component";
 import { Feedback } from "@/features/main-page/feedback-form/feedback-form.component";
@@ -25,7 +25,7 @@ export default function Home() {
   const welcomeProjects = projects.filter((project: ProjectDto) => project.showOnMain);
   return (
     <>
-      {/* <Welcome mockProjects={welcomeProjects} /> */}
+      <Welcome mockProjects={welcomeProjects} />
       <Popular popularCategories={popularCategories} />
       <About /> 
       <Principles principlesData={principlesData} />
