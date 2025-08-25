@@ -1,0 +1,139 @@
+@use '../variables.scss' as *;
+
+.modal-container {
+    z-index: 1500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-wrapper {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color:  #fff;
+    height: 100%;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: $tablet-width) {
+    .modal-wrapper {
+    padding-bottom: 70px;
+    padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: $desktop-width) {
+    .model__button-wrapper button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+.close-modal-icon {
+  height: 30%;
+  width: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.close-modal-icon:before,
+.close-modal-icon:after {
+  top: 50%;
+  left: calc(50% - 17px);
+  content: '';
+  display: block;
+  height: 4px;
+  width: 35px;
+  position: absolute;
+  background-color: $brown;
+}
+
+.close-modal-icon:before {
+  transform: rotate(45deg);
+}
+
+.close-modal-icon:after {
+  transform: rotate(-45deg);
+}
+
+.modal-content {
+    padding: 30px;
+    padding-top: 40px;
+}
+
+@media screen and (min-width: $tablet-width) {
+    .modal-content {
+        padding-top: 50px;
+    }
+    .close-modal-icon {
+        height: 5%;
+    }
+    .close-modal-icon:before,
+    .close-modal-icon:after {
+        top: 20%;
+    }
+    .modal-wrapper {
+        padding-top: 50px;
+        padding-bottom: 30px;
+        height: auto;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+}
+
+@media screen and (min-width: $desktop-width) {
+    .modal-wrapper {
+        padding-top: 40px;
+        height: 100%;
+    }
+    .modal-content {
+        padding-top: 40px;
+    }
+}
+
+.model__button-wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.modal__text--big {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    color: $text-dark;
+}
+
+.modal__text--grey {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $field-grey;
+}
+
+.modal__text--black {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $black;
+}
+
+.modal__margin--normal {
+    margin-bottom: 20px;
+}
+
+.modal__margin--small {
+    margin-bottom: 5px;
+}
