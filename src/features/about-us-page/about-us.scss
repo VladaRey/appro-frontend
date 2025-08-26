@@ -1,0 +1,160 @@
+@use '@/styles/variables' as *;
+
+.about-main {
+	margin-bottom: 83px;
+
+	@media screen and (max-width: 1100px) {
+		margin-bottom: 50px;
+	}
+
+	&__left {
+		display: flex;
+		width: calc(48% - 40px);
+		margin-right: 40px;
+
+		@media screen and (max-width: 1100px) {
+			width: 100%;
+		}
+
+		@media screen and (max-width: 767px) {
+			display: block;
+			min-height: 540px;
+		}
+	}
+
+	&__right {
+		width: 52%;
+
+		@media screen and (max-width: 1100px) {
+			width: 100%;
+			margin-top: 29px;
+		}
+	}
+
+	&__image-container {
+		position: relative;
+		max-width: 66%;
+		width: 435px;
+		height: 290px;
+		margin: 0px 20px 0 0px;
+
+		@media screen and (max-width: 767px) {
+			width: calc(100% - 10px);
+			max-width: 318px;
+			height: 212px;
+			margin: 10px 0 18px 10px;
+		}
+
+		&__image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			box-shadow: 10px 10px $yellow;
+		}
+
+		&_certificate {
+			max-width: 30%;
+			width: 207px;
+			min-width: 207px;
+			height: 290px;
+
+			@media screen and (max-width: $desktop-width) {
+				margin-bottom: 0;
+				max-width: 100%;
+				width: 207px;
+			}
+
+			&__image {
+				object-fit: cover;
+				box-shadow: 10px 10px $yellow;
+			}
+		}
+	}
+
+	&__info {
+		font-size: 18px;
+		line-height: 1.67;
+
+		p + p {
+			margin-top: 20px;
+		}
+	}
+}
+
+.about-team {
+	margin-bottom: 60px;
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 0.3fr);
+		justify-content: center;
+		grid-gap: 30px;
+
+		margin-top: 57px;
+
+		@media screen and (max-width: 1100px) {
+			grid-template-columns: repeat(2, 1fr);
+			margin-top: 40px;
+		}
+
+		@media screen and (max-width: 767px) {
+			grid-template-columns: repeat(1, 1fr);
+			margin-top: 27px;
+		}
+	}
+}
+
+.team-member {
+	&__image-container {
+		width: 109px;
+		height: 109px;
+		margin: 0 auto 16px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		&__image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__name {
+		margin: 16px 0 7px;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 123.4%;
+		text-align: center;
+	}
+
+	&__position {
+		position: relative;
+
+		margin: 7px 0 44px;
+
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 1.23;
+		text-align: center;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -22px;
+			left: 50%;
+			transform: translateX(-50%);
+
+			display: block;
+			width: 109px;
+			height: 2px;
+			background: $yellow;
+		}
+	}
+
+	&__description {
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 1.87;
+		text-align: center;
+	}
+}

@@ -1,0 +1,47 @@
+@use "@/styles/common" as *;
+@use "@/styles/variables" as *;
+
+.order__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: $text-dark;
+
+  margin-bottom: 24px;
+}
+
+.order__phone{
+  text-decoration: underline;
+}
+
+.order__description {
+  margin-bottom: 21px;
+
+  p {
+    color: $text-dark;
+    font-size: 18px;
+    line-height: 30px;
+
+    a {
+      color: $text-dark;
+    }
+
+    &:nth-child(1), &:nth-child(3) {
+      margin-bottom: 10px;
+    }
+  }
+
+}
+
+.order__error {
+  margin-top: -12px;
+  margin-bottom: 20px;
+  display: block;
+  color: #f00;
+}
+
+@media screen and (max-width: $desktop-width) {
+   .order__submit button{
+     font-size: 16px;
+  }
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import classes from '../pages/main-page/feedback-form/feedback.module.scss'
+import classes from '@/features/main-page/feedback-form/feedback.module.scss'
 import { Controller, useForm } from 'react-hook-form'
 import { TextInput } from '@/components/ui/text-input/text-input.component'
 import { Button, ButtonType } from '@/components/ui/button/button.component'
