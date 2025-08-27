@@ -1,0 +1,165 @@
+@use '@/styles/common' as *;
+@use '@/styles/variables' as *;
+
+.ProjectLayout {
+  min-height: 700px;
+  padding-top: 72px;
+}
+
+.ProjectLayout_Header {
+  @extend ._main-title;
+  @extend .title-underscore;
+  margin-bottom: 48px;
+}
+
+.ProjectLayout_Slider {
+  max-width: 100%;
+  // max-height: 770px;
+}
+
+.ProjectLayout_Info {
+  width: 100%;
+}
+
+.ProjectLayout_Attention {
+  position: relative;
+
+  margin-bottom: 24px;
+
+  padding: 5px 8px 5px 40px;
+  background: rgba(255, 176, 0, 0.5);
+  border-radius: 4px;
+
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 1.54;
+  color: $black;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background: url("../../../assets/img/project-page/mdi-info.svg") no-repeat center center;
+    background-size: contain;
+  }
+
+  a {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.54;
+    color: $black;
+  }
+}
+
+.ProjectLayout_InfoList {
+  overflow-x: scroll;
+}
+
+.ProjectLayout_InfoItem {
+  display: flex;
+  align-items: baseline;
+
+  span,
+  b {
+    display: inline-block;
+    width: 50%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: normal;
+    color: $black;
+    white-space: nowrap;
+  }
+
+  span {
+    padding-right: 10px;
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  &_24 b {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+
+    span {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+
+
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 575px) {
+    span {
+      min-width: 200px;
+    }
+
+    b {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+
+  .ProjectLayout_InfoItem {
+    span,
+    b {
+      white-space: normal;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+
+  .ProjectLayout_Info {
+    max-width: 493px;
+  }
+
+  .ProjectLayout_InfoList {
+    padding: 27px 20px;
+    background: #F5F5F5;
+  }
+
+  .ProjectLayout_InfoItem {
+    display: flex;
+    align-items: baseline;
+  
+    span,
+    b {
+      white-space: normal;
+    }
+  }
+
+  .ProjectLayout_Wrapper {
+    display: flex;
+    justify-content: space-between
+  }
+
+  .ProjectLayout_Slider {
+    max-width: 66%;
+    // max-height: 770px;
+  }
+
+  .ProjectLayout_Info {
+    width: 33%;
+    max-width: 493px;
+  }
+
+  .ProjectLayout_InfoList{
+    overflow-x: hidden;
+  }
+
+}
