@@ -1,5 +1,4 @@
 'use client'
-// import { Breadcrumbs } from '@/components/ui/breadcrumbs/breadcrumbs'
 import { Container } from '@/containers/hoc/container/container'
 import { useEffect } from 'react'
 import { useParams } from 'next/navigation'
@@ -13,12 +12,15 @@ import {
 } from '@/services/util/localStorage'
 import { useDispatch } from 'react-redux'
 import classes from '@/features/project/project.module.scss'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs/breadcrumbs'
+import { useTranslation } from 'react-i18next'
 
 
 export default function ProjectPage() {
 	const { projectId } = useParams() as { projectId: string };
 	const { data: project } = useGetProjectById(+projectId)
 	const dispatch = useDispatch()
+	const { t } = useTranslation()
 
 	useEffect(() => {
 		const projectInLocalStorage: number[] = getProjectInLocalStorage()
@@ -39,7 +41,12 @@ export default function ProjectPage() {
 		<section className={classes.Project}>
 			<Container>
 				<div className={classes.Project_Breadcrumbs}>
-					{/* <Breadcrumbs title={project.title} /> */}
+					<Breadcrumbs
+						items={[
+							{ href: '/catalogue', label: t('header.catalogue_link') },
+							{ href: `/catalogue/${project.id}`, label: project.title }
+						]}
+					/>
 				</div>
 				<h1 className={classes.Project_Title}>{project.title}</h1>
 				<div className={classes.Project_Body}>

@@ -133,12 +133,14 @@ export const RangeFilterBlock = memo(
 								</div>
 							</div>
 						)}
-						renderThumb={({ props, isDragged }) => (
-							<div
-								key={props.key}
-								{...props}
+						renderThumb={({ props, isDragged }) => {
+							const { key, style, ...rest} = props;
+							return (
+								<div
+									key={key}
+									{...rest}
 								style={{
-									...props.style,
+									...style,
 									height: '20px',
 									width: '20px',
 									borderRadius: '50%',
@@ -149,7 +151,7 @@ export const RangeFilterBlock = memo(
 									alignItems: 'center'
 								}}
 							/>
-						)}
+						)}}
 					/>
 					<output style={{ marginTop: '30px' }} id='output'>
 						{`${option.minFrom} - ${option.maxTo}`}

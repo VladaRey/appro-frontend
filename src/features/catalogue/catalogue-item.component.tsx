@@ -2,7 +2,7 @@ import { FC, memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import classes from './catalogue.module.scss'
 import { Container } from '@/containers/hoc/container/container'
-// import { Breadcrumbs } from '@/components/ui/breadcrumbs/breadcrumbs.component'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs/breadcrumbs'
 import { FilterList } from '@/features/catalogue/filter-list/filter-list.component'
 import { CatalogueHeader } from '@/features/catalogue/catalogue-header/catalogue-header.component'
 import { ProjectList } from '@/features/catalogue/project-list/project-list.component'
@@ -43,7 +43,11 @@ const CatalogueItem: FC<PropsType> = memo(
 			<div className={classes.Catalogue}>
 				<Container>
 					<div className={classes.Catalogue_Breadcrumbs}>
-						{/* <Breadcrumbs /> */}
+						<Breadcrumbs
+							items={[
+								{ href: '/catalogue', label: t('header.catalogue_link') }
+							]}
+						/>
 					</div>
 					<div>
 						<h1 className={classes['catalogue__title']}>

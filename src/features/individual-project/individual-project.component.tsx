@@ -5,7 +5,7 @@ import { Differences } from './differences/differences.component'
 import { Steps } from './steps/steps.component'
 import { Order } from './order/order.component'
 import { VisitedProjects } from '@/containers/visited-projects/visited-projects'
-// import { Breadcrumbs } from '@/components/ui/breadcrumbs/breadcrumbs.component'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs/breadcrumbs'
 
 export const IndividualProject = () => {
 	const { t } = useTranslation();
@@ -14,7 +14,7 @@ export const IndividualProject = () => {
 		<div className={classes.IndividualProject}>
 			<Container>
 				<div className={classes.IndividualProject_Breadcrumbs}>
-					{/* <Breadcrumbs /> */}
+					<Breadcrumbs items={[{ href: '/individual-project', label: t('header.individual_project_link') }]} />
 				</div>
 				<div className={classes['individual-project__header']}>
 					{t('individual.title')}
