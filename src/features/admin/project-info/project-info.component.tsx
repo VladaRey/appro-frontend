@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useReducer, useState } from 'react'
-import { useParams, usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { Box, Button, Paper, Tab, Tabs } from '@mui/material'
 import { initialState, ProjectPropAction } from './model'
 import { BasicInfo } from './basic-info.component'
@@ -13,13 +13,13 @@ import { CustomSnackbar } from '@/components/custom-snackbar.component'
 import { AlertDialog } from '@/components/admin/dialog.component'
 import { useDeleteProject } from '@/api/use-delete-project'
 
-export const ProjectInfo: FC = () => {
-	const { projectId } = useParams()
+interface ProjectInfoProps {
+	projectId?: string
+	isNew?: boolean
+}
 
+export const ProjectInfo: FC<ProjectInfoProps> = ({ projectId, isNew }) => {
 	const router = useRouter()
-	const pathname = usePathname()
-
-	const isNew = pathname === '/admin/project/new'
 
 	const [openSuccessSnackbar, setOpenSuccessSnackbar] = useState(false)
 	const [openErrorSnackbar, setOpenErrorSnackbar] = useState(false)

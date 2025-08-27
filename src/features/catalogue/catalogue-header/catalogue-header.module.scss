@@ -51,10 +51,6 @@
   .CatalogueHeader_SortingItems {
     flex-direction: row;
   }
-
-  .CatalogueHeader_Sorting{
-    flex-direction: row;
-  }
 }
 
 @media (min-width: $desktop-width){
@@ -69,13 +65,17 @@
   margin-top: 24px;
   margin-bottom: 30px;
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   align-items: center;
   font-family: Montserrat, serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 43px;
+
+  @media (min-width: $tablet-width){
+    flex-direction: row;
+  }
 }
 
 .CatalogueHeader_SortingItems {
@@ -98,6 +98,8 @@ flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
+  transition: all 0.3s ease;
+  background-color: #ffb000;
 
   .icon {
     font-size: 22px;
@@ -109,36 +111,15 @@ flex-direction: column;
 
   &:hover {
     border: 2px solid $yellow;
+    background-color: #ffb072;
     border-radius: 7px;
     img {
       opacity: 1;
     }
   }
 
-  &__ActiveAsc {
-    border: 2px solid $yellow;
-    border-radius: 4px;
-    padding: 9px 20px 10px 20px;
-
-    &:hover {
-      background-color: $yellow;
-    }
-  }
-
-  &__ActiveDesc {
-    border: 2px solid $yellow;
-    border-radius: 7px;
-    padding: 12px 20px 12px 20px;
-  }
-
   @media (max-width: $desktop-width) {
     margin-left: 0;
     padding: 10px 20px 10px 20px;
-}
-
-  @media (min-width: $desktop-width){
-    &:hover {
-      background-color: $yellow;
-    }
 }
 }

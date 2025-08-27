@@ -7,6 +7,7 @@ import {
 import { getSortUri } from '@/services/data'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
+import classes from './catalogue-header.module.scss'
 
 interface StateProps {
 	count: number
@@ -53,17 +54,6 @@ export const CatalogueHeader = ({
 	}
 
 	/**
-	 * Decide if a sort option is active (and which direction)
-	 * so we can slightly change styles if needed.
-	 */
-	const getSortItemClasses = (id: string) => {
-		return (
-			'ml-5 min-w-[190px] cursor-pointer leading-5 py-3 px-5 bg-[#ffb000] border-2 border-[#ffb000] rounded-[7px] ' +
-			'flex justify-center items-center gap-[5px] hover:bg-[#ffb072] transition-colors hover:border-[#ffb000]'
-		)
-	}
-
-	/**
 	 * Arrow rotation classes
 	 * (rotate-0 vs. rotate-90, etc.)
 	 */
@@ -79,27 +69,26 @@ export const CatalogueHeader = ({
 	return (
 		<div className='w-full'>
 			{/*"Found" projects: Hidden for smaller screens (shown at xl and above)*/}
-			<div className='hidden xl:block font-montserrat font-medium text-2xl uppercase text-black'>
+			<div className={classes.CatalogueHeader_Found}>
 				{t('catalogue.found_projects')} {count}{' '}
 			</div>
 
 			{/* Sorting Block */}
-			<div className='relative max-w-[calc(100vw-30px)] mt-6 mb-[30px] flex flex-col items-center font-montserrat 
-			font-medium text-base leading-[43px] md:flex-row'>
-				<span className='text-base mr-2 md:mr-4 mb-2 md:mb-0'>
+			<div className={classes.CatalogueHeader_Sorting}>
+				<span className={classes.CatalogueHeader_Sorting_Title}>
 					{t('catalogue.sorting.title')}{' '}
 				</span>
 
-				<div className='relative inline-block'>
-					<ul className='flex flex-col md:flex-row min-h-[43px] min-w-[190px] items-center gap-[7px]'>
+				<div className={classes.CatalogueHeader_Sorting_Wrapper}>
+					<ul className={classes.CatalogueHeader_SortingItems}>
 						{/* Area Sort */}
-						<li className={getSortItemClasses('area_sort')} onClick={() => toggleRotation('area_sort')}>
+						<li className={classes.CatalogueHeader_SortingItem} onClick={() => toggleRotation('area_sort')}>
 							{t('catalogue.sorting.area')}
 							<ArrowOutwardIcon className={getIconClasses('area_sort')} />
 						</li>
 
 						{/* Price Sort */}
-						<li className={getSortItemClasses('projectPrice_sort')} onClick={() => toggleRotation('projectPrice_sort')}>
+						<li className={classes.CatalogueHeader_SortingItem} onClick={() => toggleRotation('projectPrice_sort')}>
 							{t('catalogue.sorting.price')}
 							<ArrowOutwardIcon className={getIconClasses('projectPrice_sort')}/>
 						</li>
@@ -109,7 +98,7 @@ export const CatalogueHeader = ({
 
 			{/*Show "No projects found" only if count === 0. Visible on smaller screens (hidden at xl and above).*/}
 			{count === 0 && (
-				<div className='block xl:hidden text-[15px] font-montserrat font-medium uppercase text-black text-center pt-[30px]'>
+				<div className={classes.found_no_projects}>
 					{t('catalogue.found_no_projects')}
 				</div>
 			)}

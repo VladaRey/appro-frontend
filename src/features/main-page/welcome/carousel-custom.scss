@@ -16,6 +16,11 @@
 
 .control-arrow {
 	display: none;
+
+	&__image {
+			width: 50px;
+			height: 50px;
+		}
 }
 
 @media (max-width: $tablet-width) {
@@ -117,13 +122,6 @@
 }
 
 @media (min-width: $desktop-width) {
-	.welcome-carousel .carousel.carousel-slider .control-arrow {
-		svg {
-			height: 50px;
-			width: 50px;
-		}
-	}
-
 	.slider-control__next {
 		right: 1.5%;
 	}

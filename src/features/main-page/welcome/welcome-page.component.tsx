@@ -22,14 +22,18 @@ export const Welcome = ({ mockProjects }: PropsType) => {
     const arrowClasses = ["slider-control__prev", "control-arrow"];
 
     return (
-      <button
-        onClick={clickHandler}
-        aria-label="prev slide / item"
-        className={arrowClasses.join(" ")}
-      >
-        <Image src={SliderPrev} alt='Previous slide' width={50} height={50}/>
-      </button>
-    );
+			<button
+				onClick={clickHandler}
+				aria-label='prev slide / item'
+				className={arrowClasses.join(' ')}
+			>
+				<Image
+					src={SliderPrev}
+					alt='Previous slide'
+					className='control-arrow__image'
+				/>
+			</button>
+		)
   };
 
   const renderArrowNext = (clickHandler: () => void) => {
@@ -41,7 +45,11 @@ export const Welcome = ({ mockProjects }: PropsType) => {
 				aria-label='next slide / item'
 				className={arrowClasses.join(' ')}
 			>
-				<Image src={SliderNext} alt='Next slide' width={50} height={50}/>
+				<Image
+					src={SliderNext}
+					alt='Next slide'
+					className='control-arrow__image'
+				/>
 			</button>
 		)
   };
