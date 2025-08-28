@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import "@/styles/globals.scss";
+import ProvidersWrapper from "@/containers/providers-wrapper";
 
 export const metadata: Metadata = {
   title: "Appro",
@@ -14,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ProvidersWrapper>
+          {children}
+        </ProvidersWrapper>
+      </body>
     </html>
   );
 }

@@ -23,8 +23,8 @@ export const ImageCarousel: FC<ImageCarouselProps> = ({
 			)}/maxresdefault.jpg`,
 			thumbnail: `https://img.youtube.com/vi/${getYouTubeId(videoUrl)}/0.jpg`,
 			renderItem: () => (
-				<div className='video-wrapper'>
-					<ReactPlayer url={videoUrl} controls width='100%' />
+				<div className='md:h-[500px]'>
+					<ReactPlayer src={videoUrl} controls width='100%' height='100%' />
 				</div>
 			)
 		},

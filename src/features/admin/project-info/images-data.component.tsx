@@ -1,3 +1,4 @@
+'use client'
 import React, { FC, useEffect } from 'react'
 import { ProjectProps } from './model'
 import {
@@ -6,7 +7,8 @@ import {
 	ImageList,
 	ImageListItem,
 	ImageListItemBar,
-	Typography
+	Typography,
+	Box
 } from '@mui/material'
 import Grid from '@mui/material/Grid'
 import FileProperty from '@/features/admin/view-add-edit-project/file-property'
@@ -98,7 +100,7 @@ export const ImageData: FC<ProjectProps> = ({ mode, projectDto, dispatch }) => {
 	}
 
 	return (
-		<Grid container spacing={3}>
+		<Grid container spacing={3} columns={{xs: 2, sm: 4, md: 6, lg: 12}}>
 			<Grid size={{ xs: 12 }}>
 				<ProjectImage
 					images={projectDto.mainImage ? [projectDto.mainImage.path] : null}
@@ -112,7 +114,7 @@ export const ImageData: FC<ProjectProps> = ({ mode, projectDto, dispatch }) => {
 				/>
 				<Divider sx={{ mt: 2 }} />
 			</Grid>
-			<Grid size={{ xs: 12 }}>
+			<Grid size={{ xs: 4, sm: 6, md: 8, lg: 12 }}>
 				<ProjectImage
 					images={addNew ? null : projectDto.images.map((i: any) => i.path)}
 					title={'Зображення проекту'}
@@ -128,7 +130,7 @@ export const ImageData: FC<ProjectProps> = ({ mode, projectDto, dispatch }) => {
 			{projectDto.isFinished && (
 				<>
 					<Divider />
-					<Grid size={{ xs: 12 }}>
+					<Grid size={{ xs: 4, sm: 6, md: 8, lg: 12 }}>
 						<ProjectImage
 							images={addNew ? null : projectDto.photos.map((i: any) => i.path)}
 							title={'Фото готового проекту'}
@@ -177,18 +179,20 @@ const ProjectImage: FC<ProjectImageProps> = ({
 	}
 	return (
 		<Grid container alignItems='center' justifyContent='start'>
-			<Grid size={{ xs: 4 }}>
-				<Typography variant={'h5'}>{title}</Typography>
-			</Grid>
-			<Grid size={{ xs: 6 }}>
-				<FileProperty
-					required={required}
-					disabled={disabled}
-					multiple={multiple}
-					handleProperty={handleAddImage}
-					isLoading={isLoading}
-				/>
-			</Grid>
+			<Box className="flex flex-col sm:gap-6 sm:flex-row items-center justify-start">
+				<Box className="text-nowrap">
+					<Typography variant={'h6'}>{title}</Typography>
+				</Box>
+				<Grid size={{ xs: 12 }}>
+					<FileProperty
+						required={required}
+						disabled={disabled}
+						multiple={multiple}
+						handleProperty={handleAddImage}
+						isLoading={isLoading}
+					/>
+				</Grid>
+			</Box>
 			{images && <Grid>{ListImage(images, disabled, handleRemoveImage)}</Grid>}
 		</Grid>
 	)
@@ -200,7 +204,7 @@ export const ListImage = (
 	handleRemoveImage: (id: string | number) => void
 ) => {
 	return (
-		<ImageList cols={3}>
+		<ImageList cols={2}>
 			{images.map((item, index) => (
 				<ImageListItem key={item + index}>
 					<img src={item} alt={item} loading='lazy' />
@@ -213,7 +217,7 @@ export const ListImage = (
 									disabled={disabled}
 									onClick={() => handleRemoveImage(item)}
 								>
-									<img src={delete_icon} />
+									<img src={delete_icon.src} />
 								</IconButton>
 							}
 							actionPosition='left'

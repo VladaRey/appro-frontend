@@ -21,8 +21,8 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 }) => {
 	const view = mode === 'view';
 	return (
-		<Grid container spacing={2}>
-			<Grid size={{ xs: 2.4 }}>
+		<Grid container spacing={2} columns={{xs: 4, sm: 6, md: 8, lg: 12}}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<NumericProperty
 					title={'Жилая площадь, кв.м.'}
 					value={projectDto.livingArea}
@@ -33,7 +33,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<NumericProperty
 					title={'Площадь застройки, кв.м.'}
 					value={projectDto.buildingArea}
@@ -44,7 +44,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<NumericProperty
 					title={'Площадь терассы, кв.м.'}
 					value={projectDto.terraceArea}
@@ -55,7 +55,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<SelectProperty
 					title={'Фундамент'}
 					label={'foundation'}
@@ -68,7 +68,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<SelectProperty
 					title={'Перекрытия'}
 					label={'ceiling'}
@@ -81,7 +81,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<SelectProperty
 					title={'Кровля'}
 					label={'roof'}
@@ -94,7 +94,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<NumericProperty
 					title={'Количество спален'}
 					value={projectDto.bedroomCount}
@@ -105,7 +105,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<SelectProperty
 					title={'Материал стен'}
 					label={'wall-material'}
@@ -118,7 +118,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<NumericProperty
 					title={'Толщина стен, мм'}
 					value={projectDto.wallThickness}
@@ -129,7 +129,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<SelectProperty
 					title={'Материал утеплителя'}
 					label={'insulation'}
@@ -142,7 +142,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<NumericProperty
 					title={'Толщина утеплителя, мм'}
 					value={projectDto.insulationThickness}
@@ -157,7 +157,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 			<Grid size={{ xs: 12 }}>
 				<InputLabel>Габариты застройки</InputLabel>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<NumericProperty
 					title={'длина, м'}
 					value={projectDto.length}
@@ -168,7 +168,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<NumericProperty
 					title={'ширина, м'}
 					value={projectDto.width}
@@ -179,7 +179,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 					}
 				/>
 			</Grid>
-			<Grid size={{ xs: 2.4 }}>
+			<Grid size={{ xs: 4, sm: 3, md: 4, lg: 2.4 }}>
 				<CheckProperty
 					title={'Гараж'}
 					checked={projectDto.isGaragePresent}
@@ -192,7 +192,7 @@ export const AdditionalInfo: FC<ProjectProps> = ({
 			<Grid size={{ xs: 12 }}>
 				<InputLabel>YouTube видео</InputLabel>
 			</Grid>
-			<Grid size={{ xs: 12 }}>
+			<Grid size={{ xs: 4, sm: 10, md: 12, lg: 12 }}>
 				<TextProperty
 					title={'Ссылка на видео'}
 					value={projectDto.videoUrl}

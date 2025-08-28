@@ -1,11 +1,9 @@
 'use client'
-import { ReactNode, useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { ReactNode } from 'react'
 import { Header } from '@/components/admin/header.component'
 import { Container, createTheme, ThemeProvider } from '@mui/material'
 import { ukUA } from '@mui/material/locale'
-import { useCookies, CookiesProvider } from 'react-cookie'
-import { axiosCheckToken } from '@/services/server-data/server-data'
+import { CookiesProvider } from 'react-cookie'
 import { AdminAuthWrapper } from '@/containers/admin-auth-wrapper'
 
 interface AdminLayoutProps {

@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from 'react'
 import {
 	Button,
@@ -89,7 +90,7 @@ const FloorRow: React.FC<PropsType> = ({
 
 	return (
 		<Paper sx={{ p: 2 }}>
-			<Grid container spacing={2} key={`floor-${index}`}>
+			<Grid container spacing={2} key={`floor-${index}`} columns={{xs: 2, sm: 4, md: 8, lg: 12}}>
 				<Grid size={{ xs: 2 }}>
 					<NumericProperty
 						title={'Номер этажа'}
@@ -218,7 +219,7 @@ export const ListImage = (
 									disabled={disabled}
 									onClick={() => handleRemoveImage(item)}
 								>
-									<img src={delete_icon} />
+									<img src={delete_icon.src} />
 								</IconButton>
 							}
 							actionPosition='left'

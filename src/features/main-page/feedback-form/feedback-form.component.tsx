@@ -6,7 +6,7 @@ import classes from './feedback.module.scss'
 import { Container } from '@/containers/hoc/container/container'
 import { TextInput } from '@/components/ui/text-input/text-input.component'
 import { Button, ButtonType } from '@/components/ui/button/button.component'
-//import SuccessPopup from '@/components/success-popup/success-popup.component'
+import SuccessPopup from '@/components/success-popup/success-popup.component'
 import { Controller, useForm } from 'react-hook-form'
 import {
 		axiosPostFeedback,
@@ -200,7 +200,7 @@ import {
 							/>
 						</form>
 					</div>
-					{/*{successMessageVisible && <SuccessPopup />}*/}
+					{successMessageVisible && <SuccessPopup />}
 				</Container>
 			</section>
 		)

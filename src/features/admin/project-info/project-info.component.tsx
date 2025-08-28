@@ -1,3 +1,4 @@
+'use client'
 import React, { FC, useEffect, useReducer, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Box, Button, Paper, Tab, Tabs } from '@mui/material'
@@ -128,15 +129,13 @@ export const ProjectInfo: FC<ProjectInfoProps> = ({ projectId, isNew }) => {
 		<Box>
 			<Box
 				display={'flex'}
-				justifyContent={'flex-end'}
-				gap={2}
+				gap={1}
 				zIndex={100000000000}
+				className="flex-col sm:flex-row sm:justify-end"
+				sx={{
+					marginBottom: '10px'
+				}}
 			>
-				<AlertDialog
-					triggerButtonTitle='Видалити проект'
-					text='Ви впевнені, що хочете видалити проект?'
-					handler={deleteProjectHandler}
-				/>
 				<Button
 					color={'success'}
 					variant={'contained'}
@@ -145,6 +144,11 @@ export const ProjectInfo: FC<ProjectInfoProps> = ({ projectId, isNew }) => {
 				>
 					Зберегти зміни
 				</Button>
+				<AlertDialog
+					triggerButtonTitle='Видалити проект'
+					text='Ви впевнені, що хочете видалити проект?'
+					handler={deleteProjectHandler}
+				/>
 			</Box>
 
 			<CustomSnackbar
@@ -177,7 +181,12 @@ export const ProjectInfo: FC<ProjectInfoProps> = ({ projectId, isNew }) => {
 			/>
 
 			<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-				<Tabs value={tabIndex} onChange={handleChange}>
+				<Tabs
+					value={tabIndex}
+					onChange={handleChange}
+					allowScrollButtonsMobile
+					variant='scrollable'
+				>
 					<Tab label='Основне' />
 					<Tab label='Додаткове' />
 					<Tab label='Поверхи' />

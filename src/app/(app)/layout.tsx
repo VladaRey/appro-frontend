@@ -1,9 +1,5 @@
 'use client'
 
-import QueryProvider from '@/providers/query-provider'
-import ReduxProvider from '@/providers/redux-provider'
-import "@/i18n/config"
-
 import { Wrapper } from '@/containers/hoc/wrapper/wrapper'
 import { Header } from '@/components/header/header.component'
 import { Footer } from '@/components/footer/footer.component'
@@ -24,16 +20,12 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 	}
 
 	return (
-		<QueryProvider>
-			<ReduxProvider>
-					<Wrapper>
-						<Header />
-						<main className={classes.content}>{children}</main>
-						<Footer />
-						<OrderModalContainer onFormSubmit={showSuccessMessage} />
-					    {successMessageVisible && <SuccessPopup />}
-					</Wrapper>
-			</ReduxProvider>
-		</QueryProvider>
+		<Wrapper>
+			<Header />
+			<main className={classes.content}>{children}</main>
+			<Footer />
+			<OrderModalContainer onFormSubmit={showSuccessMessage} />
+			{successMessageVisible && <SuccessPopup />}
+		</Wrapper>
 	)
 }
