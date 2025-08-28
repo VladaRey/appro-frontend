@@ -1,0 +1,28 @@
+@use "@/styles/variables" as *;
+
+.Breadcrumbs{
+
+  display: flex;
+  gap: 4px;
+
+  a {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  :first-child a{
+    text-decoration: underline;
+  }
+
+  :last-child img {
+    display: none;
+  }
+}

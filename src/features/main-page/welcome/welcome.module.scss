@@ -1,0 +1,9 @@
+@use "@/styles/variables" as *;
+
+@media (min-width: $desktop-width) {
+  .welcome {
+    //min-height: 100vh;
+    position: relative;
+    min-height: 170px;
+  }
+}

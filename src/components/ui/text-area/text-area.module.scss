@@ -1,0 +1,36 @@
+@use "@/styles/variables" as *;
+
+.text-area {
+  margin-bottom: 20px;
+}
+
+.text-area textarea {
+  font-family: 'Montserrat', serif;
+  padding: 20px;
+  width: 100%;
+  max-width: 328px;
+  border: 1px solid $field-grey;
+  height: 140px;
+  resize: none;
+}
+
+.text-area textarea::placeholder {
+  font-family: 'Montserrat', serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: $field-grey;
+}
+
+@media (min-width: $tablet-width) {
+  .text-area textarea {
+    max-width: 412px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .text-area textarea {
+    max-width: 494px;
+  }
+}
