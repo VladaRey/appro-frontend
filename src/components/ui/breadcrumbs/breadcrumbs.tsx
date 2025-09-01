@@ -14,10 +14,9 @@ interface Crumb {
 
 interface BreadcrumbsProps {
 	items?: Crumb[]
-	title?: string 
 }
 
-export const Breadcrumbs: FC<BreadcrumbsProps> = ({ items = [], title }) => {
+export const Breadcrumbs: FC<BreadcrumbsProps> = ({ items = [] }) => {
 	const { t } = useTranslation()
 
 	return (

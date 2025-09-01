@@ -66,6 +66,10 @@
     width: 50%;
   }
 
+  .popular-category__title {
+    font-size: 20px;
+  }
+
   .popular-category:nth-last-child(-n + 2) {
     margin-bottom: 0;
   }
@@ -123,7 +127,6 @@
 
   .popular-category__title {
     height: 70px;
-    font-size: 24px;
     line-height: 30px;
     padding: 20px 30px;
   }

@@ -21,10 +21,11 @@
 
 .project-details__info {
   height: 50px;
-  padding: 0 10px 0 20px;
+  padding: 0 10px 0 10px;
   display: flex;
   justify-content: space-between;
   background-color: $brown;
+  align-content: center;
   align-items: center;
 }
 
@@ -37,7 +38,7 @@
 
 .project-details__info-text {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 10px;
   color: #FFFFFF;
   line-height: 16px;
 
@@ -57,6 +58,7 @@
 
   .project-details__info-text {
     padding: 6px 0;
+    font-size: 12px;
 
     span {
       display: inline;
@@ -85,6 +87,7 @@
   .project-details__info-text {
     padding: 6px 0;
     line-height: 18px;
+    font-size: 14px;
 
     span {
       display: inline;
@@ -97,6 +100,7 @@
 
 @media (min-width: $desktop-width) {
   .project-details__info {
-    padding: 0 20px 0 30px;
+    padding: 0 15px 0 15px;
+    gap: 4px;
   }
 }

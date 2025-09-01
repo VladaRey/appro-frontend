@@ -53,6 +53,7 @@ export const FilterList = ({ applyFilter, closeDrawer }: StateProps) => {
 			option.isSelected
 		)
 
+		searchUri.set('page', '1')
 		router.push(`${pathname}?${searchUri.toString()}`)
 		applyFilter(searchUri)
 	}
@@ -67,6 +68,7 @@ export const FilterList = ({ applyFilter, closeDrawer }: StateProps) => {
 			true
 		)
 
+		search.set('page', '1')
 		router.push(`${pathname}?${search.toString()}`)
 
 		applyFilter(search)

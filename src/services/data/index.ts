@@ -82,7 +82,7 @@ const applyFilters = (
 
 	filters.forEach((value, key) => {
 		const filterFunction = filterFunctions[key]
-		if (key.includes('_sort')) {
+		if (key.includes('_sort') || key === 'page') {
 			return
 		}
 		if (!filterFunction(value, project)) {
@@ -98,7 +98,7 @@ const getProjectsByFilters = (
 	projects: ProjectDto[],
 	filters: URLSearchParams
 ): ProjectDto[] => {
-	let currentProjects = [...projects]
+	const currentProjects = [...projects]
 
 	if (!filters.keys().next().value) return currentProjects
 
@@ -196,12 +196,12 @@ const compareProjects = (
 	order: string,
 	field: string
 ) => {
-	// @ts-ignore
+	// @ts-expect-error
 	if (+project1[field] < +project2[field]) {
 		return order === 'asc' ? -1 : 1
 	}
 
-	// @ts-ignore
+	// @ts-expect-error
 	if (+project1[field] > +project2[field]) {
 		return order === 'asc' ? 1 : -1
 	}
