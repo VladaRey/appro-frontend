@@ -6,19 +6,25 @@ import catalogueSortInfo, {
 	SortDirection
 } from '@/constants/sort-data/catalogue-sort-info'
 import CatalogueItem from '@/features/catalogue/catalogue-item.component'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import { useGetAllProjects } from '@/api/use-get-all-projects'
 import { ProjectDto } from '@/api/model'
 
 const projectsPerPage = 8
 
 export const Catalogue = () => {
+	const searchParams = useSearchParams()
+	const router = useRouter()
+	const pathname = usePathname()
+
+	// Get initial page from URL or default to 1
+	const initialPage = parseInt(searchParams.get('page') || '1', 10)
+
 	const [state, setState] = useState({
 		projects: [] as ProjectDto[],
 		currentProjects: [] as ProjectDto[],
-		currentPage: 1
+		currentPage: initialPage
 	})
-	const searchParams = useSearchParams()
 
 	const { data: projects } = useGetAllProjects()
 
@@ -27,6 +33,12 @@ export const Catalogue = () => {
 			setState(prevState => ({ ...prevState, projects }))
 		}
 	}, [projects])
+
+	// Update page when URL changes
+	useEffect(() => {
+		const pageFromUrl = parseInt(searchParams.get('page') || '1', 10)
+		setState(prevState => ({ ...prevState, currentPage: pageFromUrl }))
+	}, [searchParams])
 
 	if (!projects) return <div>Loading...</div>
 
@@ -37,11 +49,15 @@ export const Catalogue = () => {
 
 	const applySort = (searchParams: URLSearchParams) => {
 		const sortedProjects = sortProjectsByParams(state.projects, searchParams)
-
 		setState({ ...state, currentProjects: sortedProjects, currentPage: 1 })
 	}
 
 	const handlePageChange = (nextPage: number) => {
+		// Update URL with new page parameter while preserving other params
+		const newSearchParams = new URLSearchParams(searchParams)
+		newSearchParams.set('page', nextPage.toString())
+		router.push(`${pathname}?${newSearchParams.toString()}`)
+
 		setState({ ...state, currentPage: nextPage })
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}

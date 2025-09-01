@@ -3,6 +3,7 @@ import React from 'react'
 
 import Logo from '@/assets/img/logo.svg'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const Header = () => {
 	return (
@@ -17,7 +18,7 @@ export const Header = () => {
 						>
 							<Box width={95}>
 								<Link href={'/'}>
-									<img src={Logo.src} alt='logo' />
+									<Image src={Logo} alt='logo' />
 								</Link>
 							</Box>
 							<Box className="flex items-center gap-1" sx={{ paddingTop: '8px' }}>

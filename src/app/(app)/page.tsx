@@ -9,14 +9,12 @@ import { useSelector } from "react-redux";
 import {
   getPopularCategories,
   getPrinciplesData,
-  getProjects,
 } from "../../redux/selectors";
 import { useGetAllProjects } from "../../api/use-get-all-projects";
 import { ProjectDto } from "@/api/model";
 
 export default function Home() {
   const { data: projects } = useGetAllProjects();
-  const mockProjects = useSelector(getProjects);
   const popularCategories = useSelector(getPopularCategories);
   const principlesData = useSelector(getPrinciplesData);
 

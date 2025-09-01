@@ -48,6 +48,8 @@ export const CatalogueHeader = ({
 		}
 
 		const searchUri = getSortUri(id, direction, currentSearchParams)
+		// Reset to page 1 when sorting
+		searchUri.set('page', '1')
 		applySort(searchUri)
 
 		router.push(`${pathname}?${decodeURIComponent(searchUri.toString())}`)
