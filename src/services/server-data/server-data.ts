@@ -2,14 +2,10 @@ import { Project } from "../../entity/Project/project";
 import axios, { AxiosResponse } from "axios";
 import { IFeedbackForm } from "../../features/main-page/feedback-form/feedback-form.component";
 
-const HOST = process.env.NEXT_PUBLIC_API_URL
-
-export const currentHost = process.env.NODE_ENV === "development"
-  ? HOST
-  : "";
+export const currentHost = process.env.NEXT_PUBLIC_API_URL
 
 const defaultOptions = {
-  baseURL: process.env.NODE_ENV === "production" ? "/api/v1" : `${currentHost}/api/v1`,
+  baseURL: `${currentHost}/api/v1`,
   withCredentials: true,
 };
 
