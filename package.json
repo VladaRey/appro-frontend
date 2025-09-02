@@ -37,7 +37,6 @@
     "react-redux": "^9.2.0",
     "react-responsive-carousel": "^3.2.23",
     "react-switch": "^7.1.0",
-    "sass": "^1.89.2",
     "zustand": "^5.0.6"
   },
   "devDependencies": {
@@ -51,6 +50,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.3",
     "jest": "^30.1.0",
+    "sass": "^1.91.0",
     "tailwindcss": "^4",
     "ts-jest": "^29.4.1",
     "typescript": "^5"

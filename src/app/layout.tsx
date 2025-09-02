@@ -1,7 +1,12 @@
-import type { Metadata } from "next";
-import "@/styles/globals.css";
-import "@/styles/globals.scss";
-import ProvidersWrapper from "@/containers/providers-wrapper";
+import type { Metadata } from 'next'
+import '@/styles/globals.scss'
+import { Montserrat } from 'next/font/google'
+import ProvidersWrapper from '@/containers/providers-wrapper'
+
+const montserrat = Montserrat({
+	subsets: ["latin"],
+	variable: "--font-montserrat",
+})
 
 export const metadata: Metadata = {
   title: "Appro",
@@ -13,13 +18,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>
-        <ProvidersWrapper>
-          {children}
-        </ProvidersWrapper>
-      </body>
-    </html>
+	return (
+		<html lang="en" className={montserrat.variable}>
+			<body>
+				<ProvidersWrapper>{children}</ProvidersWrapper>
+			</body>
+		</html>
   );
 }
