@@ -147,7 +147,7 @@ const OrderModal = ({
 									<TextInput
 										error={!!errors.phone}
 										{...props}
-										mask={'+380 999999999'}
+										mask={'+380 _________'}
 										placeholder={t('modal.phone')}
 									/>
 									{error && (

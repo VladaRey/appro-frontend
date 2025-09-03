@@ -22,8 +22,16 @@ export const TextInput = ({
 	placeholder,
 	mask
 }: Props) => {
-	const maskProps = useMask({ mask: mask || '' })
+	const maskInputRef = useMask({
+		mask: mask || undefined,
+		replacement: {
+			_: /\d/
+		},
+		showMask: true
+	})
 
+	// Use the mask ref when mask is provided
+	const refToUse = mask ? maskInputRef : undefined
 	return (
 		<div className={classes['text-input']}>
 			<input
@@ -32,7 +40,7 @@ export const TextInput = ({
 				placeholder={placeholder}
 				value={value}
 				onChange={onChange}
-				{...maskProps}
+				ref={refToUse}
 			/>
 		</div>
 	)

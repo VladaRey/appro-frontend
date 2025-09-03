@@ -86,7 +86,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onFormSubmit }) => {
 							<TextInput
 								error={!!error}
 								{...props}
-								mask={'+380 999999999'}
+								mask={'+380 _________'}
 								placeholder={t('individual.contact_form.phone')}
 							/>
 							{error && (

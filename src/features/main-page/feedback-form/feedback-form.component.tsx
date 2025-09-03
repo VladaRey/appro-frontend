@@ -153,7 +153,7 @@ import {
 											<TextInput
 												error={!!error}
 												{...field}
-												mask={'+380 999999999'}
+												mask={'+380 _________'}
 												placeholder={t('main.feedback.phone')}
 											/>
 											{error && (
