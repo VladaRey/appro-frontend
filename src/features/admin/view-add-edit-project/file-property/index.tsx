@@ -8,7 +8,7 @@ interface FilePropertyProps {
 	required?: boolean
 	multiple?: boolean
 	disabled?: boolean
-	handleProperty(event: React.ChangeEvent<any>): void
+	handleProperty(event: React.ChangeEvent<HTMLInputElement>): void
 	isLoading?: boolean
 }
 

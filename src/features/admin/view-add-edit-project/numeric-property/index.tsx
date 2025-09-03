@@ -7,7 +7,7 @@ interface Props {
 	required?: boolean
 	disabled?: boolean
 
-	handleProperty(event: React.ChangeEvent<any>): void
+	handleProperty(event: React.ChangeEvent<HTMLInputElement>): void
 }
 
 const NumericProperty = ({
@@ -27,7 +27,7 @@ const NumericProperty = ({
 		value={value || ''}
 		type={'number'}
 		disabled={disabled}
-		onChange={event => handleProperty(event)}
+		onChange={event => handleProperty(event as React.ChangeEvent<HTMLInputElement>)}
 	/>
 )
 

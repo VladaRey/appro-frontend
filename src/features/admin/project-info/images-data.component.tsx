@@ -116,7 +116,7 @@ export const ImageData: FC<ProjectProps> = ({ mode, projectDto, dispatch }) => {
 			</Grid>
 			<Grid size={{ xs: 4, sm: 6, md: 8, lg: 12 }}>
 				<ProjectImage
-					images={addNew ? null : projectDto.images.map((i: any) => i.path)}
+					images={addNew ? null : projectDto.images.map((i: ImageInfo) => i.path)}
 					title={'Зображення проекту'}
 					required={true}
 					multiple={true}
@@ -132,7 +132,7 @@ export const ImageData: FC<ProjectProps> = ({ mode, projectDto, dispatch }) => {
 					<Divider />
 					<Grid size={{ xs: 4, sm: 6, md: 8, lg: 12 }}>
 						<ProjectImage
-							images={addNew ? null : projectDto.photos.map((i: any) => i.path)}
+							images={addNew ? null : projectDto.photos.map((i: ImageInfo) => i.path)}
 							title={'Фото готового проекту'}
 							required={false}
 							multiple={true}
@@ -158,7 +158,7 @@ interface ProjectImageProps {
 	isMain?: boolean
 	isLoading?: boolean
 
-	handleAddImage(event: React.ChangeEvent<any>): void
+	handleAddImage(event: React.ChangeEvent<HTMLInputElement>): void
 
 	handleRemoveImage(id: string | number): void
 }

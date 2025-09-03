@@ -6,7 +6,7 @@ import { ProjectDto } from '@/api/model'
 interface Props {
 	projects: ProjectDto[]
 }
-export const ProjectList = memo(({ projects }: Props) => {
+export const ProjectList = memo(function ProjectList({ projects }: Props) {
 	return (
 		<div className={classes['project-list__items']}>
 			{projects.map((project: ProjectDto, idx: number) => (

@@ -96,7 +96,7 @@ const FloorRow: React.FC<PropsType> = ({
 						title={'Номер этажа'}
 						value={index}
 						disabled={isFloorIndexDisabled() || view}
-						handleProperty={(event: React.ChangeEvent<any>) =>
+						handleProperty={(event: React.ChangeEvent<HTMLInputElement>) =>
 							handleFloorIndexChange(event, id)
 						}
 					/>
@@ -106,7 +106,7 @@ const FloorRow: React.FC<PropsType> = ({
 						title={'Площадь, м2'}
 						value={area}
 						disabled={view}
-						handleProperty={(event: React.ChangeEvent<any>) =>
+						handleProperty={(event: React.ChangeEvent<HTMLInputElement>) =>
 							handleFloorAreaChange(event, id)
 						}
 					/>
@@ -116,7 +116,7 @@ const FloorRow: React.FC<PropsType> = ({
 						title={'Высота, м'}
 						value={height}
 						disabled={view}
-						handleProperty={(event: React.ChangeEvent<any>) =>
+						handleProperty={(event: React.ChangeEvent<HTMLInputElement>) =>
 							handleFloorHeightChange(event, id)
 						}
 					/>
@@ -170,7 +170,7 @@ interface Props {
 	disabled?: boolean
 	isMain?: boolean
 
-	handleAddImage(event: React.ChangeEvent<any>): void
+	handleAddImage(event: React.ChangeEvent<HTMLInputElement>): void
 
 	handleRemoveImage(id: string | number): void
 }

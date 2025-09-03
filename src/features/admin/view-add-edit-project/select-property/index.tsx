@@ -2,6 +2,7 @@ import React from 'react'
 import MenuItem from '@mui/material/MenuItem'
 import { TextField } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import { TFunction } from 'i18next'
 
 interface Props {
 	title: string
@@ -11,13 +12,13 @@ interface Props {
 	required?: boolean
 	disabled?: boolean
 
-	handleProperty(event: React.ChangeEvent<any>): void
+	handleProperty(event: React.ChangeEvent<HTMLInputElement>): void
 }
 
 const getSelectOptions = (
 	options: ReadonlyArray<string>,
 	label: string,
-	t: any
+	t: TFunction
 ) => {
 	const renderOptions = [] as React.ReactElement[]
 	options.forEach((option: string | number, idx: number) =>

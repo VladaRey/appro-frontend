@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import { useModalStore } from '@/modal/order-modal-container.store'
 import './additional.scss'
 import '@/features/project/project-structure/project-structure.scss'
+import Image from 'next/image'
 
 import main_plan from '@/assets/img/project-page/main-plan.svg'
 import pen from '@/assets/img/project-page/pen.svg'
@@ -40,7 +41,7 @@ export const Additional = () => {
 				<div className='illustrated-list'>
 					<div className='illustrated-list__top'>
 						<div className='illustrated-list__img'>
-							<img src={main_plan.src} alt='' />
+							<Image src={main_plan} alt='' width={60} height={60} />
 						</div>
 						<div className='illustrated-list__title'>
 							{t('additional.services.general_plan.title')}
@@ -59,7 +60,7 @@ export const Additional = () => {
 				<div className='illustrated-list'>
 					<div className='illustrated-list__top'>
 						<div className='illustrated-list__img'>
-							<img src={pen.src} alt='' />
+							<Image src={pen} alt='' width={60} height={60} />
 						</div>
 						<div className='illustrated-list__title'>
 							{t('additional.services.engineering_section.title')}
@@ -74,7 +75,7 @@ export const Additional = () => {
 				<div className='illustrated-list project-additional__list'>
 					<div className='illustrated-list__top'>
 						<div className='illustrated-list__img'>
-							<img src={paint.src} alt='' />
+							<Image src={paint} alt='' width={60} height={60} />
 						</div>
 						<div className='illustrated-list__title'>
 							{t('additional.services.interior_design.title')}
@@ -95,7 +96,7 @@ export const Additional = () => {
 				<div className='illustrated-list project-additional__list'>
 					<div className='illustrated-list__top'>
 						<div className='illustrated-list__img'>
-							<img src={main_plan.src} alt='' />
+							<Image src={main_plan} alt='' width={60} height={60} />
 						</div>
 						<div className='illustrated-list__title'>
 							{t('additional.services.building_intentions.title')}

@@ -22,7 +22,7 @@ export const TextInput = ({
 	placeholder,
 	mask
 }: Props) => {
-	const maskProps = mask ? useMask({ mask }) : {}
+	const maskProps = useMask({ mask: mask || '' })
 
 	return (
 		<div className={classes['text-input']}>

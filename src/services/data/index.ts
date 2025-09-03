@@ -196,12 +196,12 @@ const compareProjects = (
 	order: string,
 	field: string
 ) => {
-	// @ts-expect-error
+	// @ts-expect-error: project field is dynamic
 	if (+project1[field] < +project2[field]) {
 		return order === 'asc' ? -1 : 1
 	}
 
-	// @ts-expect-error
+	// @ts-expect-error: project field is dynamic
 	if (+project1[field] > +project2[field]) {
 		return order === 'asc' ? 1 : -1
 	}

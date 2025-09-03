@@ -11,7 +11,7 @@ interface ProjectDetailsProps {
 }
 
 export const ProjectDetails: FC<ProjectDetailsProps> = memo(
-	({ projectData }) => {
+	function ProjectDetails({ projectData }) {
 		const onClick = () => {
 			window.scrollTo(0, 200)
 		}

@@ -30,7 +30,7 @@ declare module 'react-image-gallery' {
 		onScreenChange?: (fullScreenElement: Element | null) => void
 		onPause?: (currentIndex: number) => void
 		onPlay?: (currentIndex: number) => void
-		[key: string]: any 
+		[key: string]: unknown
 	}
 
 	export default class ImageGallery extends React.Component<ReactImageGalleryProps> {}

@@ -6,7 +6,7 @@ import classes from './order.module.scss'
 import { ContactForm } from './contact-form/contact-form.component'
 import SuccessPopup from '@/components/success-popup/success-popup.component'
 
-export const Order = memo(() => {
+export const Order = memo(function Order() {
 	const { t } = useTranslation()
 	const [successMessageVisible, setSuccessMessageVisible] = useState(false)
 	const showSuccessMessage = () => {

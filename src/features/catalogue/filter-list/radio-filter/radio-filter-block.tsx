@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const RadioFilterBlock = memo(
-	({ filterId, initialOption, applyFilter }: Props) => {
+	function RadioFilterBlock({ filterId, initialOption, applyFilter }: Props) {
 		const filterInfo = catalogueFiltersInfo.get(filterId)
 		const getInitialState = () => {
 			if (!filterInfo) return undefined

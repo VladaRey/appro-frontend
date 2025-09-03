@@ -10,6 +10,12 @@ interface ImageCarouselProps {
 	videoUrl?: string
 }
 
+interface GalleryItem {
+	original: string
+	thumbnail: string
+	renderItem?: () => ReactElement
+}
+
 export const ImageCarousel: FC<ImageCarouselProps> = ({
 	mainImage,
 	images,
@@ -29,7 +35,7 @@ export const ImageCarousel: FC<ImageCarouselProps> = ({
 			)
 		},
 		...images.map(image => ({ original: image, thumbnail: image }))
-	].filter(Boolean) as any[]
+	].filter(Boolean) as GalleryItem[]
 
 	items.forEach(item => {
 		Object.assign(item, {

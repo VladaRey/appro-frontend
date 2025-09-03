@@ -18,7 +18,9 @@ interface Props {
 }
 
 export const RangeFilterBlock = memo(
-	({ filterId, initialRange, applyFilter }: Props) => {
+	function RangeFilterBlock({ filterId, initialRange, applyFilter }: Props) {
+		const { t } = useTranslation()
+		
 		const filterInfo = catalogueFiltersInfo.get(filterId)
 		const option = filterInfo?.options as RangeOption
 
@@ -71,7 +73,6 @@ export const RangeFilterBlock = memo(
 			applyFilter(validRange)
 		}
 
-		const { t } = useTranslation()
 
 		return (
 			<div className={classes.RangeFilterBlock}>

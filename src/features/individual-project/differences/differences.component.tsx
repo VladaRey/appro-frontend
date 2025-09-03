@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import planImage from '@/assets/img/individual-project/plan.jpg'
 import classes from './differences.module.scss'
 
-export const Differences = memo(() => {
+export const Differences = memo(function Differences() {
 	const { t } = useTranslation()
 
 	return (
