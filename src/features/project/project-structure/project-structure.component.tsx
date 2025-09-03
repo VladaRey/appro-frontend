@@ -4,6 +4,7 @@ import sketch_image from '@/assets/img/project-page/sketch.svg'
 import draw_image from '@/assets/img/project-page/draw.svg'
 import { InfoCard } from '@/features/project/general-info/info-card.component'
 import { ProjectDto } from '@/api/model'
+import Image from 'next/image'
 
 import { useTranslation } from 'react-i18next'
 
@@ -35,7 +36,7 @@ export const ProjectStructure = ({ project }: Props) => {
 						<div className='illustrated-list'>
 							<div className='illustrated-list__top'>
 								<div className='illustrated-list__img'>
-									<img src={sketch_image.src} alt='' />
+									<Image src={sketch_image} alt='' width={60} height={60}/>
 								</div>
 								<div className='illustrated-list__title'>
 									{t('project.architectural_section.title')}
@@ -55,7 +56,7 @@ export const ProjectStructure = ({ project }: Props) => {
 						<div className='illustrated-list'>
 							<div className='illustrated-list__top'>
 								<div className='illustrated-list__img'>
-									<img src={draw_image.src} alt='' />
+									<Image src={draw_image} alt='' width={60} height={60}/>
 								</div>
 								<div className='illustrated-list__title'>
 									{t('project.structural_section.title')}

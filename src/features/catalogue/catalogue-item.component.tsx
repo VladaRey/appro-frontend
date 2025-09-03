@@ -25,7 +25,7 @@ interface PropsType {
 }
 
 const CatalogueItem: FC<PropsType> = memo(
-	({
+	function CatalogueItem({
 		applyFilter,
 		currentProjects,
 		sortDetails,
@@ -34,7 +34,7 @@ const CatalogueItem: FC<PropsType> = memo(
 		currentPage,
 		projectsPerPage,
 		handlePageChange
-	}) => {
+	}) {
 		const [openFilter, setOpenFilter] = useState(false)
 
 		const { t } = useTranslation()

@@ -3,12 +3,13 @@ import { ProjectDetails } from '@/containers/project-details/project-details'
 import { useGetAllProjects } from '@/api/use-get-all-projects'
 import { ProjectDto } from '@/api/model'
 import { useTranslation } from 'react-i18next'
+import { FullSizeLoader } from '@/components/full-size-loader.component'
 
 export const VisitedProjects = () => {
 	const { data: projects } = useGetAllProjects()
 	const { t } = useTranslation()
 
-	if (!projects) return <div>Loading...</div>
+	if (!projects) return <FullSizeLoader />
 
 	return (
 		<section>

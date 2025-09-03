@@ -14,6 +14,7 @@ import { useDispatch } from 'react-redux'
 import classes from '@/features/project/project.module.scss'
 import { Breadcrumbs } from '@/components/ui/breadcrumbs/breadcrumbs'
 import { useTranslation } from 'react-i18next'
+import { FullSizeLoader } from '@/components/full-size-loader.component'
 
 
 export default function ProjectPage() {
@@ -34,7 +35,7 @@ export default function ProjectPage() {
 	}, [project])
 
 	if (!project) {
-		return <div>Not found</div>
+		return <FullSizeLoader />
 	}
 
 	return (

@@ -15,7 +15,9 @@ interface Props {
 }
 
 export const CheckboxFilterBlock = memo(
-	({ filterId, initialOptions, applyFilter }: Props) => {
+	function CheckboxFilterBlock({ filterId, initialOptions, applyFilter }: Props) {
+		const { t } = useTranslation()
+		
 		const filterInfo = catalogueFiltersInfo.get(filterId)
 
 		const getInitialState = () => {
@@ -56,7 +58,6 @@ export const CheckboxFilterBlock = memo(
 			applyFilter(clickedOption)
 		}
 
-		const { t } = useTranslation()
 
 		return (
 			<div className={classes.CheckboxFilterBlock}>

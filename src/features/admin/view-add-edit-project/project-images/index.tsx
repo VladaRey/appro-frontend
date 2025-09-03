@@ -17,7 +17,7 @@ interface Props {
 	disabled?: boolean
 	isMain?: boolean
 
-	handleAddImage(event: React.ChangeEvent<any>): void
+	handleAddImage(event: React.ChangeEvent<HTMLInputElement>): void
 
 	handleRemoveImage(id: string | number): void
 }

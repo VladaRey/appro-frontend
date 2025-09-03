@@ -11,16 +11,11 @@ interface ProjectDetailsProps {
 }
 
 export const ProjectDetails: FC<ProjectDetailsProps> = memo(
-	({ projectData }) => {
-		const onClick = () => {
-			window.scrollTo(0, 200)
-		}
-
+	function ProjectDetails({ projectData }) {
 		const { t } = useTranslation()
 
 		return (
 			<Link
-				onClick={onClick}
 				href={`/catalogue/${projectData.id}`}
 				className={classes['project-details']}
 			>

@@ -13,11 +13,11 @@ export const FloorsInfo: FC<ProjectProps> = ({
 	const { floors } = projectDto;
 
 	const handleFloorIndexChange = (
-		event: React.ChangeEvent<any>,
+		event: React.ChangeEvent<HTMLInputElement>,
 		floorId: number
 	) => {
 		const floors = [...projectDto.floors];
-		const index = event.target.value;
+		const index = parseInt(event.target.value);
 		floors.filter(i => i.id === floorId).forEach(i => (i.index = index));
 
 		dispatch({ type: 'floors', payload: floors });
@@ -39,11 +39,13 @@ export const FloorsInfo: FC<ProjectProps> = ({
 	const handleFloorImageChange = (floorId: number, image: ImageInfo) => {
 		const floors = [...projectDto.floors];
 		// update image info
-		floors.find(i => i.id === floorId).planningImage = image;
-
-		console.log('floors', floors);
-
-		dispatch({ type: 'floors', payload: floors });
+		const floor = floors.find(i => i.id === floorId)
+		if (floor) {
+			floor.planningImage = image
+			dispatch({ type: 'floors', payload: floors })
+		} else {
+			console.log(`Floor with id ${floorId} not found`)
+		}
 	}
 
 	const handleFloorBasementChange = (floorId: number) => {
@@ -62,22 +64,22 @@ export const FloorsInfo: FC<ProjectProps> = ({
 	}
 
 	const handleFloorAreaChange = (
-		event: React.ChangeEvent<any>,
+		event: React.ChangeEvent<HTMLInputElement>,
 		floorId: number
 	) => {
 		const floors = [...projectDto.floors]
-		const area = event.target.value
+		const area = parseInt(event.target.value);
 		floors.filter(i => i.id === floorId).forEach(i => (i.area = area))
 
 		dispatch({ type: 'floors', payload: floors });
 	}
 
 	const handleFloorHeightChange = (
-		event: React.ChangeEvent<any>,
+		event: React.ChangeEvent<HTMLInputElement>,
 		floorId: number
 	) => {
 		const floors = [...projectDto.floors]
-		const height = event.target.value
+		const height = parseInt(event.target.value);
 		floors.filter(i => i.id === floorId).forEach(i => (i.height = height))
 
 		dispatch({ type: 'floors', payload: floors });

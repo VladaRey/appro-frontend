@@ -65,8 +65,8 @@ export const Welcome = ({ mockProjects }: PropsType) => {
           showThumbs={false}
         >
           {mockProjects.map((project, index) => (
-            <div>
-            <ProjectItem key={index} project={project} />
+            <div key={index}>
+              <ProjectItem project={project} />
             </div>
           ))}
         </Carousel>

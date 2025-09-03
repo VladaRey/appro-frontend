@@ -7,7 +7,7 @@ interface Props {
 	value: string
 	required?: boolean
 	disabled?: boolean
-	handleProperty(event: React.ChangeEvent<any>): void
+	handleProperty(event: React.ChangeEvent<HTMLInputElement>): void
 }
 
 const TextProperty = ({
@@ -25,7 +25,7 @@ const TextProperty = ({
 		name={title}
 		value={value}
 		disabled={disabled}
-		onChange={event => handleProperty(event)}
+		onChange={event => handleProperty(event as React.ChangeEvent<HTMLInputElement>)}
 	/>
 )
 

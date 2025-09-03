@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useCookies } from "react-cookie"
 import { axiosCheckToken } from "@/services/server-data/server-data"
+import { FullSizeLoader } from "@/components/full-size-loader.component"
 
 
 export const AdminAuthWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -38,7 +39,7 @@ export const AdminAuthWrapper = ({ children }: { children: React.ReactNode }) =>
 		}, [cookies])
 
 		if (isAuth === null) {
-			return <div>Загрузка...</div>
+			return <FullSizeLoader />
 		}
 
 	return <>{children}</>

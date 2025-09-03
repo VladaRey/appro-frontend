@@ -10,6 +10,7 @@ import CatalogueItem from '@/features/catalogue/catalogue-item.component'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import { useGetAllProjects } from '@/api/use-get-all-projects'
 import { ProjectDto } from '@/api/model'
+import { FullSizeLoader } from '@/components/full-size-loader.component'
 
 const projectsPerPage = 8
 
@@ -41,7 +42,7 @@ export const Catalogue = () => {
 		setState(prevState => ({ ...prevState, currentPage: pageFromUrl }))
 	}, [searchParams])
 
-	if (!projects) return <div>Loading...</div>
+	if (!projects) return <FullSizeLoader />
 
 	const applyFilter = (searchParams: URLSearchParams) => {
 		const filteredProjects = getProjectsByFilters(state.projects, searchParams)

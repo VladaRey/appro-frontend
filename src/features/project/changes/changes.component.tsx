@@ -6,6 +6,7 @@ import { ProjectDto } from '@/api/model'
 import { usePathname } from 'next/navigation'
 import { currentHost } from '@/services/server-data/server-data'
 import { useModalStore } from '@/modal/order-modal-container.store'
+import Image from 'next/image'
 
 interface IChangesProps {
 	project: ProjectDto
@@ -32,7 +33,7 @@ export const Changes = ({ project }: IChangesProps) => {
 				<p>{t('catalogue.changes.description2')}</p>
 				<div className='project-modification__wrapper'>
 					<div className='project-modification__img'>
-						<img src={project_modification.src} alt='' />
+						<Image src={project_modification} alt='' width={730} height={520} />
 					</div>
 					<div className='project-modification__info'>
 						<div className='project-modification__info-title'>
