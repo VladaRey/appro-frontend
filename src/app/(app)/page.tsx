@@ -12,13 +12,14 @@ import {
 } from "../../redux/selectors";
 import { useGetAllProjects } from "../../api/use-get-all-projects";
 import { ProjectDto } from "@/api/model";
+import { FullSizeLoader } from "@/components/full-size-loader.component";
 
 export default function Home() {
   const { data: projects } = useGetAllProjects();
   const popularCategories = useSelector(getPopularCategories);
   const principlesData = useSelector(getPrinciplesData);
 
-  if (!projects) return <div>Loading...</div>;
+  if (!projects) return <FullSizeLoader />;
 
   const welcomeProjects = projects.filter((project: ProjectDto) => project.showOnMain);
   return (

@@ -16,7 +16,6 @@ export const PopularCategory = ({ categoryData }: Props) => {
 		<Link
 			href={categoryData.link || ''}
 			className={classes['popular-category']}
-			onClick={() => window.scrollTo({ top: 0 })}
 		>
 			<div className={classes['popular-category__body']}>
 				<div className={classes['popular-category__img-wrapper']}>

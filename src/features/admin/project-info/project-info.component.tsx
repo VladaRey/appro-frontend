@@ -13,6 +13,7 @@ import { useGetProjectById } from '@/api/use-get-project-by-id'
 import { CustomSnackbar } from '@/components/custom-snackbar.component'
 import { AlertDialog } from '@/components/admin/dialog.component'
 import { useDeleteProject } from '@/api/use-delete-project'
+import { FullSizeLoader } from '@/components/full-size-loader.component'
 
 interface ProjectInfoProps {
 	projectId?: string
@@ -99,7 +100,7 @@ export const ProjectInfo: FC<ProjectInfoProps> = ({ projectId, isNew }) => {
 	}, [savedProject])
 
 	if (!currentProject) {
-		return <div>Loading...</div>
+		return <FullSizeLoader />
 	}
 
 	const saveProjectHandler = () => {
